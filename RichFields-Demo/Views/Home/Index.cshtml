@@ -1,0 +1,78 @@
+﻿@using RichFields
+@using RichFields_Demo.Models
+@model RichFieldsDemoViewModel
+
+@{
+    ViewBag.Title = "Rich Fields Demo";
+}
+
+
+@using (Html.BeginForm(
+    "RichFieldsDemo",
+    "Home",
+    FormMethod.Post,
+    new { id = "FORM-RichFieldsDemo" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="row">
+        <div class="col-6">
+            <div class="form-group">
+                @Html.LabelFor(m => m.ExamplePercent)
+                @Html.rfEditPercentFor(m => m.ExamplePercent)
+                @Html.ValidationMessageFor(m => m.ExamplePercent)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.ExampleMoney)
+                @Html.rfEditMoneyFor(m => m.ExampleMoney,
+                    DisplayFormat: "###,###,###,##0.##;(###,###,###,##0.##);")
+                @Html.ValidationMessageFor(m => m.ExampleMoney)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.ExampleInt)
+                @Html.rfEditIntFor(m => m.ExampleInt)
+                @Html.ValidationMessageFor(m => m.ExampleInt)
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="form-group">
+                @Html.LabelFor(m => m.ExampleDate)
+                @Html.rfDateFor(m => m.ExampleDate)
+                @Html.ValidationMessageFor(m => m.ExampleDate)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.ExampleMonthYear)
+                @Html.rfEditMonthYearFor(m => m.ExampleMonthYear)
+                @Html.ValidationMessageFor(m => m.ExampleMonthYear)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.ExampleText)
+                @Html.rfEditTextFor(m => m.ExampleText)
+                @Html.ValidationMessageFor(m => m.ExampleText)
+            </div>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+}
+
+
+
+@section scripts{
+    <script type="text/javascript" src="~/Scripts/RichFields.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $(".apply-datepicker").datepicker({
+                dateFormat: "m/d/y",
+                onClose: function (dateText, inst) {
+                    $(this).change();
+                }
+            });
+        });
+    </script>
+}

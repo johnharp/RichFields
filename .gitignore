@@ -1,0 +1,10 @@
+
+/.vs/RichFields/v16
+/packages
+/RichFields/bin/Debug
+/RichFields/obj/Debug
+/RichFields/bin/Release
+/RichFields/obj/Release
+/.vs/RichFields/config
+/RichFields-Demo/bin
+/RichFields-Demo/obj/Debug
