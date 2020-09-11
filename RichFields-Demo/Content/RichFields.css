@@ -1,0 +1,27 @@
+﻿.rf-dirty {
+    background-color: #e2e858 !important;
+}
+
+.rf-saving {
+    background-color: lightgray;
+}
+
+.field-validation-error {
+    color: red;
+}
+
+.rf-percent {
+    text-align: right;
+}
+
+.rf-percent::-webkit-inner-spin-button,
+.rf-percent::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.rf-money::-webkit-inner-spin-button,
+.rf-money::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
